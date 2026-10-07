@@ -1,5 +1,7 @@
 ## Hi, I'm Mykyta 👋
 
+<a href="https://mykyta-pantelei.planary.ch"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&pause=1200&color=58A6FF&vCenter=true&width=520&height=36&lines=Building+full-stack+web+apps;Shipping+iOS+apps+in+SwiftUI;Writing+Go+APIs+and+Postgres+schemas;Steering+AI+agents+to+production;Open+to+internships+from+Aug+2027" alt="Building full-stack web apps, shipping iOS apps, steering AI agents" /></a>
+
 Application developer in training (Informatiker EFZ, IMS at bwd Bern) with a Berufsmaturität in business. I like building software that real people use: from the first spec to deployment and running it in production.
 
 I build with AI coding agents like Claude Code: I write the specs, steer the agents, and review and test what goes live.
@@ -15,6 +17,13 @@ I build with AI coding agents like Claude Code: I write the specs, steer the age
 | [**Planary Wishlist**](https://github.com/Fallka0/planary-wishlist) · [live](https://planary-wishlist.vercel.app) | Full-stack wishlist app with automatic link previews | Go, React, Postgres |
 | [**Planary Casino**](https://github.com/Fallka0/planary-casino) · [live](https://planary-casino.vercel.app) | Play-money game lobby with shared wallet, friends and verified odds | Next.js, Cloudflare Workers |
 | [**FreakDeck**](https://github.com/Fallka0/FreakDeck) | DIY hardware macro pad: firmware and Windows companion app | Arduino, Python |
+
+### On GitHub
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fallka0/Fallka0/output/stats-dark.svg" />
+  <img src="https://raw.githubusercontent.com/Fallka0/Fallka0/output/stats.svg" alt="Contributions, streaks and languages" width="100%" />
+</picture>
 
 ### Tech I use
 
@@ -38,3 +47,8 @@ Ukrainian and Russian (native) · German (C1, Swiss German) · English (C1) · F
 ### Contact
 
 [Portfolio](https://mykyta-pantelei.planary.ch) · [LinkedIn](https://www.linkedin.com/in/mykyta-pantelei-814813233/) · [mykytapantelei@gmail.com](mailto:mykytapantelei@gmail.com)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Fallka0/Fallka0/output/snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/Fallka0/Fallka0/output/snake.svg" alt="Snake eating my contribution graph" width="100%" />
+</picture>
