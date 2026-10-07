@@ -13,7 +13,7 @@ const USER = process.env.USERNAME ?? "Fallka0";
 const TOKEN = process.env.GITHUB_TOKEN;
 
 // Markup and config languages say little about what someone builds.
-const IGNORED = new Set(["HTML", "CSS", "SCSS", "Dockerfile", "Makefile", "Batchfile", "Inno Setup", "Procfile"]);
+const IGNORED = new Set(["HTML", "CSS", "SCSS", "Dockerfile", "Makefile", "Batchfile", "Inno Setup", "Procfile", "TeX"]);
 
 // Colours from GitHub's linguist, so the card matches the repo pages.
 const LANG_COLORS = {
@@ -51,10 +51,14 @@ async function loadData() {
   }
 
   const repos = (await gh(`/users/${USER}/repos?per_page=100&type=owner`)).filter((r) => !r.fork);
+  // Every repo gets the same weight. Summing raw bytes would let one repo with
+  // generated files (designer code, vendored libraries) drown out the rest.
   const languages = {};
   for (const r of repos) {
-    const langs = await gh(`/repos/${USER}/${r.name}/languages`);
-    for (const [lang, bytes] of Object.entries(langs)) languages[lang] = (languages[lang] ?? 0) + bytes;
+    const langs = Object.entries(await gh(`/repos/${USER}/${r.name}/languages`)).filter(([l]) => !IGNORED.has(l));
+    const total = langs.reduce((s, [, b]) => s + b, 0);
+    if (!total) continue;
+    for (const [lang, bytes] of langs) languages[lang] = (languages[lang] ?? 0) + bytes / total;
   }
 
   let total = null;
@@ -106,7 +110,7 @@ function card(data, theme) {
     .filter(([l]) => !IGNORED.has(l))
     .sort((a, b) => b[1] - a[1]);
   const sum = langs.reduce((s, [, b]) => s + b, 0) || 1;
-  const top = langs.slice(0, 6).map(([l, b]) => ({ l, p: (b / sum) * 100 }));
+  const top = langs.slice(0, 5).map(([l, b]) => ({ l, p: (b / sum) * 100 }));
   const rest = 100 - top.reduce((s, x) => s + x.p, 0);
   if (rest >= 0.5) top.push({ l: "Other", p: rest });
 
